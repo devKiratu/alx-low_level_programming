@@ -17,9 +17,9 @@ int main(void)
 	while (start < end)
 	{
 		putchar(start);
-		putchar(newline);
 		start++;
 	}
 
+	putchar(newline);
 	return (0);
 }

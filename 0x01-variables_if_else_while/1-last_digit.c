@@ -8,7 +8,7 @@
  * description: print out last digit of a random number
  * and describe its value relative to 5.
  *
- * Return 0
+ * Return: 0 (success)
  */
 
 int main(void)

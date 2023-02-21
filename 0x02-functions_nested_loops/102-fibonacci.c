@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int i = 5;
+	int i = 3;
 	long int first = 1, prev = 2, temp;
 
 	printf("%lu, %lu", first, prev);

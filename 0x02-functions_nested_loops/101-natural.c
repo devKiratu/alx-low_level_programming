@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 /**
- * sum_of_multiples - prints out sum of multiples of 3 and 5
+ * main - entry point
  *
- * Return: void
+ * description: prints out sum of multiples of 3 and 5
+ *
+ * Return: 0 (success)
  */
-
-void sum_of_multiples(void)
+int main(void)
 {
 	int i = 3;
 	int sum = 0;
@@ -21,4 +22,5 @@ void sum_of_multiples(void)
 	}
 
 	printf("%d\n", sum);
+	return (0);
 }

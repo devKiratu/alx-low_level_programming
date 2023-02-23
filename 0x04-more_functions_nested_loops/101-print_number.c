@@ -28,7 +28,7 @@ void print_number(int n)
 	/* handle negative numbers*/
 	if (n < 0)
 	{
-		_putchar('-');
+		_putchar(45);
 		n *= -1;
 	}
 

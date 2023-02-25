@@ -10,12 +10,20 @@
 
 void print_number(int n)
 {
-	int first_digit, position, zeros, count = 0, input = n;
+	int first_digit, position, zeros, count = 0;
+	unsigned int input = n, new_n = n;
 
 	if (n == 0)
 	{
 		_putchar('0');
 		return;
+	}
+	/* handle negative numbers*/
+	if (n < 0)
+	{
+		_putchar(45);
+		new_n = -new_n;
+		input = -input;
 	}
 
 	/* get the number of digits in the input*/
@@ -25,22 +33,15 @@ void print_number(int n)
 		count++;
 	}
 
-	/* handle negative numbers*/
-	if (n < 0)
-	{
-		_putchar(45);
-		n *= -1;
-	}
-
 	/* print the digits */
 	zeros = count - 1;
 
 	while (zeros >= 0)
 	{
 		position = _pow(10, zeros);
-		first_digit = n / position;
+		first_digit = new_n / position;
 		_putchar('0' + first_digit);
-		n = n - (first_digit * position);
+		new_n = new_n - (first_digit * position);
 		zeros--;
 	}
 }

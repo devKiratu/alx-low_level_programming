@@ -10,14 +10,9 @@
 
 void print_number(int n)
 {
-	int first_digit, position, zeros, count = 0;
+	int first_digit, place_value = 1;
 	unsigned int input = n, new_n = n;
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
 	/* handle negative numbers*/
 	if (n < 0)
 	{
@@ -26,43 +21,19 @@ void print_number(int n)
 		input = -input;
 	}
 
-	/* get the number of digits in the input*/
-	while (input != 0)
+	/* get the place value of the first digit*/
+	while (input >= 10)
 	{
 		input /= 10;
-		count++;
+		place_value *= 10;
 	}
 
 	/* print the digits */
-	zeros = count - 1;
-
-	while (zeros >= 0)
+	while (place_value > 0)
 	{
-		position = _pow(10, zeros);
-		first_digit = new_n / position;
+		first_digit = new_n / place_value;
 		_putchar('0' + first_digit);
-		new_n = new_n - (first_digit * position);
-		zeros--;
+		new_n = new_n - (first_digit * place_value);
+		place_value /= 10;
 	}
-}
-
-/**
- * _pow - calculates the result of raising an integer to a power
- *
- * @base: the base
- * @power: the power to raise to
- *
- * Return: the result
- */
-int _pow(int base, int power)
-{
-	int result = 1;
-
-	while (power > 0)
-	{
-		result *= base;
-		power--;
-	}
-
-	return (result);
 }

@@ -1,7 +1,6 @@
-# 0x08 - Recursion  
-## 0x08 - Recursion  
-### 0x08 - Recursion  
-#### 0x08 - Recursion  
-##### 0x08 - Recursion  
-###### 0x08 - Recursion  
-Get it? :-)  
+# 0x08 - Recursion
+## 0x08 - Recursion
+### 0x08 - Recursion
+#### 0x08 - Recursion
+##### 0x08 - Recursion
+###### 0x08 - Recursion

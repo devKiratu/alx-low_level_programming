@@ -14,9 +14,13 @@
 char *str_concat(char *s1, char *s2)
 {
 	if (s1 == NULL && s2 == NULL)
-		return ("");
+	{
+		char *ptr = malloc(1);
 
-	if (s1 == NULL && s2)
+		ptr[0] = '\0';
+		return (ptr);
+	}
+	else if (s1 == NULL && s2)
 	{
 		return (dup_str(s2));
 	}

@@ -68,13 +68,16 @@ int get_word_count(char *str)
 	int count = 0;
 
 	while (*str != '\0')
-		str++;
-
-	if (*str != '\0')
 	{
-		while (!isspace(*str))
+		while (isspace(*str))
 			str++;
-		count++;
+
+		if (*str != '\0')
+		{
+			while (!isspace(*str))
+				str++;
+			count++;
+		}
 	}
 
 	return (count);

@@ -20,7 +20,7 @@ char **strtow(char *str)
 		return (NULL);
 
 	size = get_word_count(str);
-	ptr = malloc((sizeof(char) * size) + 1);
+	ptr = malloc((sizeof(char *) * size) + 1);
 
 	if (ptr == NULL)
 		return (NULL);

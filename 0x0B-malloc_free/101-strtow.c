@@ -16,10 +16,10 @@ char **strtow(char *str)
 	int i = 0, size, len;
 	char **ptr;
 
-	if (str == NULL || str[0] == '\0')
+	size = get_word_count(str);
+	if (str == NULL || str[0] == '\0' || size == 0)
 		return (NULL);
 
-	size = get_word_count(str);
 	ptr = malloc(sizeof(char *) * (size + 1));
 	if (ptr == NULL)
 		return (NULL);

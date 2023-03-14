@@ -21,7 +21,6 @@ char **strtow(char *str)
 
 	size = get_word_count(str);
 	ptr = malloc((sizeof(char *) * size) + 1);
-
 	if (ptr == NULL)
 		return (NULL);
 	while (*str != '\0')
@@ -48,6 +47,7 @@ char **strtow(char *str)
 				return (NULL);
 			}
 			strncpy(ptr[i], start, len);
+			ptr[i][len] = '\0';
 			i++;
 		}
 	}

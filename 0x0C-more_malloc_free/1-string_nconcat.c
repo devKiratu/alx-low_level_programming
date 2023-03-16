@@ -20,6 +20,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s1 == NULL && s2 == NULL)
 	{
 		ptr = malloc(1);
+		if (ptr == NULL)
+			return (NULL);
 		ptr[0] = '\0';
 		return (ptr);
 	}

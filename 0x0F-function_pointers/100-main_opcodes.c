@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 {
 	int i = 0, bytes;
 	unsigned char *ptr;
+	int (*f)(int, char **) = main;
 
 	if (argc != 2)
 	{
@@ -25,7 +26,7 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	ptr = (unsigned char *)main;
+	ptr = (unsigned char *)f;
 	while (i < bytes)
 	{
 		printf("%02x ", *(ptr + i));

@@ -11,7 +11,7 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	char *separator = ", ";
 
-	if (format == NULL)
+	if (format == NULL || *format == '\0')
 		return;
 
 	va_start(args, format);

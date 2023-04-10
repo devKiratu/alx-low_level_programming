@@ -21,15 +21,23 @@ int create_file(const char *filename, char *text_content)
 	{
 		fd = open(filename, O_WRONLY);
 		if (fd == -1)
+		{
+			close(fd);
 			return (-1);
+		}
 	}
 
 	if (text_content != NULL)
 	{
 		status = write(fd, text_content, strlen(text_content));
 		if (status == -1)
+		{
+			close(fd);
 			return (-1);
+		}
 	}
+
+	close(fd);
 
 	return (1);
 }

@@ -35,14 +35,14 @@ int main(int argc, char *argv[])
 
 		if (argv[1] == NULL || fdr == -1 || bytes_r == -1)
 		{
-			dprintf(STDERR_FILENO, "Can't read frm file %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
 
 		bytes_w = write(fdw, buf, bytes_r);
 		if (argv[2] == NULL || fdw == -1 || bytes_w == -1)
 		{
-			dprintf(STDERR_FILENO, "Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
@@ -61,7 +61,7 @@ void close_file(int fd)
 {
 	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }

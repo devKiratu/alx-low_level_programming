@@ -10,7 +10,7 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd, status, o_flags, permissions;
 
-	o_flags = O_WRONLY | O_CREAT | O_EXCL | O_TRUNC;
+	o_flags = O_WRONLY | O_CREAT | O_TRUNC;
 	permissions = S_IRUSR | S_IWUSR;
 
 	if (filename == NULL)

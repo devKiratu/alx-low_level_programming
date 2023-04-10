@@ -26,13 +26,10 @@ int main(int argc, char *argv[])
 
 	fdr = open(argv[1], O_RDONLY);
 	fdw = open(argv[2], o_flags, permissions);
+	bytes_r = read(fdr, buf, 1024);
 
 	while (1)
 	{
-		bytes_r = read(fdr, buf, 1024);
-		if (bytes_r <= 0)
-			break;
-
 		if (argv[1] == NULL || fdr == -1 || bytes_r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -45,6 +42,11 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
+		bytes_r = read(fdr, buf, 1024);
+		if (bytes_r <= 0)
+			break;
+		fdw = open(argv[2], O_WRONLY | O_APPEND);
+
 	}
 
 	close_file(fdr);

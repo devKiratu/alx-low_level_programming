@@ -18,14 +18,7 @@ int create_file(const char *filename, char *text_content)
 
 	fd = open(filename, o_flags, permissions);
 	if (fd == -1)
-	{
-		fd = open(filename, O_WRONLY);
-		if (fd == -1)
-		{
-			close(fd);
-			return (-1);
-		}
-	}
+		return (-1);
 
 	if (text_content != NULL)
 	{

@@ -3,6 +3,8 @@ SRC = main.c school.c
 OBJ = ${SRC:.c=.o}
 NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
+FGS := ${CFLAGS}
+CL := ${CC}
 
 all: ${NAME}
 
@@ -10,7 +12,7 @@ ${NAME}: ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
 
 %.o: %.c
-	${CC} ${CFLAGS} -c $< -o $@
+	${CL} ${FGS} -c $< -o $@
 
 clean: 
 	${RM} *~ ${NAME}

@@ -7,11 +7,23 @@ def island_perimeter(grid):
         Args:
             grid: repesentation of water and land
     """
-    has_land = False
-    for row in grid:
-        if not all(i == 0 for i in row):
-            has_land = True
-    if not has_land:
-        return 0
-    else:
-        return 5
+    perimeter = 0
+
+    def add_border(row, col):
+        """Helper function to check if a boundary is required
+        """
+        # check for index out of range or water in cell
+        if row < 0 or col < 0 or row >= len(grid) or col >= len(grid[0]) or \
+                grid[row][col] == 0:
+            return 1
+        else:
+            return 0
+
+    for row in range(len(grid)):
+        for col in range(len(grid[row])):
+            if grid[row][col] == 1:
+                perimeter += add_border(row - 1, col)
+                perimeter += add_border(row + 1, col)
+                perimeter += add_border(row, col - 1)
+                perimeter += add_border(row, col + 1)
+    return perimeter

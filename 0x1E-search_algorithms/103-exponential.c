@@ -20,13 +20,13 @@ int exponential_search(int *array, size_t size, int value)
 	if (array[0] == value)
 		return (0);
 
-	while (i < size && array[i] <= value)
+	while (i < size && array[i] < value)
 	{
 		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
 		i *= 2;
 	}
 	left = i / 2;
-	right = i < size - 1 ? i : size - 1;
+	right = i < size ? i : size - 1;
 	return (bin_search(array, left, right, value));
 }
 
